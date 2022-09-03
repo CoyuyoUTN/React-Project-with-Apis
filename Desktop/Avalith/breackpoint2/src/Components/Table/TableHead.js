@@ -23,7 +23,7 @@ const TableHead = () => {
       }
     });
     console.log("getAxios", getAxios);
-    setUsers(getAxios.data);
+    setUsers(getAxios.data.results);
   };
 
   useEffect(() => {
@@ -46,9 +46,9 @@ const TableHead = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => {
+            {users.map((user, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <th>{user.id}</th>
                   <td>{user.name}</td>
                   <td>{user.email}</td>

@@ -17,20 +17,18 @@ const FormBody = () => {
             id="name"
             className="input-form"
             type="text"
-            maxlength="15"
-            minlength="2"
+            maxLength="15"
+            minLength="2"
             placeholder="Username"
-            autocomplete="off"
             required
           ></input>
           <input
             id="email"
             className="input-form"
             type="email"
-            maxlength="30"
-            minlength="5"
+            maxLength="30"
+            minLength="5"
             placeholder="Email"
-            autocomplete="off"
             required
           ></input>
           <textarea
@@ -38,8 +36,8 @@ const FormBody = () => {
             className="textarea-form"
             name="textarea"
             placeholder="Write something here"
-            maxlength="100"
-            minlength="2"
+            maxLength="100"
+            minLength="2"
             required
           ></textarea>
           <button id="send" className="button-form">
