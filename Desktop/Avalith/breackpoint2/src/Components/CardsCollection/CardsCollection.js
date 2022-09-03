@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Cards from "./Cards";
+import "./cards.css";
+import PaginationCards from "./PaginationCards";
 
 const CardsCollection = () => {
-  const page = 1;
+  const page = 2;
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -21,21 +23,24 @@ const CardsCollection = () => {
           console.log("Error", error.message);
         }
       });
-      console.log("getAxiosAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", getAxios);
       setCards(getAxios.data.results);
     };
     getCardsAxios();
   }, []);
 
   return (
-    <div>
-      <Cards card_prop={cards} />
-
+    <div className="body-container">
       <Link to="/">
-        <button type="submit" className="button-form" href="">
-          <span>Back</span>
-        </button>
+        <div className="container_back_card">
+          <button type="submit" className="container_back_btn_card" href="">
+            <span>Back</span>
+          </button>
+        </div>
       </Link>
+      <div className="body-card">
+        <Cards card_prop={cards} />
+      </div>
+      <PaginationCards />
     </div>
   );
 };

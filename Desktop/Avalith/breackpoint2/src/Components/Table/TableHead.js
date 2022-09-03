@@ -22,8 +22,8 @@ const TableHead = () => {
         console.log("Error", error.message);
       }
     });
-    console.log("getAxios", getAxios);
-    setUsers(getAxios.data.results);
+
+    setUsers(getAxios.data);
   };
 
   useEffect(() => {

@@ -1,18 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-    font-family: 'Prompt', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Prompt', sans-serif;
+}
+.body-container{
+  width: 100%;
+  height: 100vh;
+  background-color:#000;
+  display:flex;
+  flex-direction: column;
+}  
 
-  body {
-    width: 100%;
-    height: 100vh;
-    background-color:#000;
+
+
+  .body-card {
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
- 
+    background-color: #000;
+  
   }
 
   .card{
@@ -24,9 +31,10 @@
     align-items: center;
     color: rgb(225 225 225);
     font-size: 15px;
+
   }
 
-  img {
+  .image-card {
     width: 80%;
     height: 60%;
     object-fit:cover;
@@ -39,22 +47,24 @@
     
   }
 
-  .container {
+  .container-card {
     display:flex;
     flex-wrap: wrap;
   }
 
-  .container:hover img {
+  .container-card:hover .image-card {
     opacity:0.3;
   }
 
 
-  .container img:hover {
+  .container-card .image-card:hover {
     transform:perspective(800px)       rotateY(0deg);
     opacity:1;
   }
+/*--------------------------------------------------------------------------------------*/
+  
 
-  .container_back_btn{
+.container_back_btn_card{
     
     background-color: #08d;
     border-radius: 12px;
@@ -67,48 +77,29 @@
     margin-top: 60px;
     text-align: center;
     width: 100%;
-    border: 2px solid white;}
+    border: 2px solid white;
+  }
 
-.container_back_btn:active{
+.container_back_btn_card:active{
  background-color: #06b;
 }
-.container_back {
-width: 100%;
-display: flex;
-justify-content: center;
-}
 
-.container_back_btn{
+.container_back_btn_card{
   align-self: center;
   width: 20%;
   background-color: rgb(34, 32, 32);
 }
-.pagination{
-  width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+
+/*--------------------------------------------------------------------------------------*/
+
+.container_back_card {
+width: 100%;
+display: flex;
+justify-content: center;
+background-color: #000;
 }
 
-.pagination-btn{
-  width: 33%;
-  background-color: rgb(34, 32, 32);
-  margin-bottom: 40px;
-}
 
-.pagination-btn:active{
-  background-color: rgb(82, 78, 78);
-}
 
-.pagination-btn:hover{
-  background-color: rgb(82, 78, 78);
-}
 
-.container_back_btn:active{
-  background-color: rgb(82, 78, 78);
-}
-
-.container_back_btn:hover{
-  background-color: rgb(82, 78, 78);
-}
+/*--------------------------------------------------------------------------------------*/
