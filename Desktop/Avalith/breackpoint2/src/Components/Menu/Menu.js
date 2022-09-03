@@ -19,13 +19,11 @@ const Menu = () => {
           </Link>
         </div>
         <div className="container_links_third">
-          <button
-            className="container_link_btn"
-            onclick="location.href='./cards.html'"
-            href=""
-          >
-            <span>API Rick & Morty</span>
-          </button>
+          <Link to="/RickAndMortyCollection">
+            <button className="container_link_btn" href="">
+              <span>API Rick & Morty</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
