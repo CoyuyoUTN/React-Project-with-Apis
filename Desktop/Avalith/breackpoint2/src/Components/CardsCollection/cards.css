@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-  font-family: 'Prompt', sans-serif;
-}
+
 .body-container{
   width: 100%;
   height: 100vh;
@@ -22,7 +17,7 @@
   
   }
 
-  .card{
+  .card-card{
     width: 20%;
     height: 400px;
     display: flex;
@@ -65,8 +60,8 @@
   
 
 .container_back_btn_card{
-    
-    background-color: #08d;
+    display: flex;
+    justify-content: center;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -80,9 +75,7 @@
     border: 2px solid white;
   }
 
-.container_back_btn_card:active{
- background-color: #06b;
-}
+
 
 .container_back_btn_card{
   align-self: center;
@@ -103,3 +96,17 @@ background-color: #000;
 
 
 /*--------------------------------------------------------------------------------------*/
+.text-button-card{
+
+  color: #fff;
+  background-color: rgb(34, 32, 32);
+
+}
+
+.container_back_btn_card:hover{
+  background-color: #06b;
+ }
+
+ .text-button-card:hover{
+  background-color: #06b;
+ }
