@@ -1,5 +1,5 @@
 
-body {
+.body-datForm {
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -57,6 +57,7 @@ body {
 
 
   #backButton {
+    width: 120px;
     color: white;
     margin-top: 20px;
     background: #1DA1F2;
