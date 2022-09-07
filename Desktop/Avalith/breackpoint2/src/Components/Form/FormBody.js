@@ -17,10 +17,10 @@ const FormBody = () => {
           const na = ev.target.userName.value;
           const em = ev.target.userEmail.value;
           const ta = ev.target.userTextarea.value;
-          if (validations(na, em, ta) === true) {
-            setNameUser(ev.target.userName.value);
-            setUserEmail(ev.target.userEmail.value);
-            setUserTextarea(ev.target.userTextarea.value);
+          if (validations(na, em, ta) === false) {
+            setNameUser("");
+            setUserEmail("");
+            setUserTextarea("");
           }
         }}
       >
@@ -90,7 +90,9 @@ const FormBody = () => {
         </div>
       </form>
 
-      <DatForm name={nameUser} email={userEmail} textarea={userTextarea} />
+      {nameUser && userEmail && userTextarea ? (
+        <DatForm name={nameUser} email={userEmail} textarea={userTextarea} />
+      ) : null}
     </div>
   );
 };
@@ -98,7 +100,7 @@ const FormBody = () => {
 const validations = (name, email, textarea) => {
   if (name.length === 0) {
     alert("No has escrito nada en el usuario");
-    return;
+    return false;
   }
 
   const validation = validarEmail(email);
@@ -106,12 +108,12 @@ const validations = (name, email, textarea) => {
     alert(
       "La dirección de email es incorrecta!. Prueba con @hotmail.com o gmail.com"
     );
-    return;
+    return false;
   }
 
   if (textarea.length === 0) {
     alert("No has escrito nada en el mensaje");
-    return;
+    return false;
   }
 
   alert("Enviado con éxito");
