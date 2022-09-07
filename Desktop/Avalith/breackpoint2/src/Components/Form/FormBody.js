@@ -42,6 +42,10 @@ const FormBody = () => {
             placeholder="Username"
             autoComplete="off"
             name="userName"
+            value={nameUser}
+            onChange={(ev) => {
+              setNameUser(ev.target.value);
+            }}
             required
           ></input>
           <input
@@ -53,6 +57,10 @@ const FormBody = () => {
             placeholder="Email"
             autoComplete="off"
             name="userEmail"
+            value={userEmail}
+            onChange={(ev) => {
+              setUserEmail(ev.target.value);
+            }}
             required
           ></input>
           <textarea
@@ -63,6 +71,10 @@ const FormBody = () => {
             maxLength="100"
             minLength="2"
             autoComplete="off"
+            value={userTextarea}
+            onChange={(ev) => {
+              setUserTextarea(ev.target.value);
+            }}
             required
           ></textarea>
 
