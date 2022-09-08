@@ -1,26 +1,25 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import DatForm from "./DatForm";
+import { Link, useNavigate } from "react-router-dom";
 import "./form.css";
 
 const FormBody = () => {
   const [nameUser, setNameUser] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userTextarea, setUserTextarea] = useState("");
-
+  let navigate = useNavigate();
   return (
     <div className="body-form">
       <form
         className="form"
         onSubmit={(ev) => {
           ev.preventDefault();
-          const na = ev.target.userName.value;
-          const em = ev.target.userEmail.value;
-          const ta = ev.target.userTextarea.value;
-          if (validations(na, em, ta) === false) {
-            setNameUser("");
-            setUserEmail("");
-            setUserTextarea("");
+
+          if (validations(nameUser, userEmail, userTextarea)) {
+            navigate("/formData", {
+              state: { nameUser, userEmail, userTextarea },
+            });
+          } else {
+            return false;
           }
         }}
       >
@@ -62,7 +61,7 @@ const FormBody = () => {
               setUserEmail(ev.target.value);
             }}
             required
-          ></input>
+          />
           <textarea
             id="textarea"
             className="textarea-form"
@@ -76,7 +75,7 @@ const FormBody = () => {
               setUserTextarea(ev.target.value);
             }}
             required
-          ></textarea>
+          />
 
           <button type="submit" id="send" className="button-form">
             Send
@@ -89,10 +88,6 @@ const FormBody = () => {
           </Link>
         </div>
       </form>
-
-      {nameUser && userEmail && userTextarea ? (
-        <DatForm name={nameUser} email={userEmail} textarea={userTextarea} />
-      ) : null}
     </div>
   );
 };
